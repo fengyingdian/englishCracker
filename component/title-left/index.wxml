@@ -1,0 +1,11 @@
+<!--myComponents/courseInfo/index.wxml-->
+<view class="w100-white"> 
+  <view class="wc100" id="{{index}}" style='width:100%'>
+    <view class="w10">
+      <image src="{{icon}}" style='width:20px;height:20px;'/>
+    </view>
+    <view class="wl90" style='padding-left:20px'>
+      <text class="textMid20" style='font-size:14px;font-weight:900'> {{name}} </text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<!--myComponents/courseInfo/index.wxml-->
+<view style='height:10px;background:ghostwhite'/>
+<view class='w100-white' wx:for='{{courseInfo}}'> 
+<image src="{{item.src}}" style='border-radius:3px;height:{{item.h2}}px;border-radius:3px;align-content:left;width:100%'/>
+</view>

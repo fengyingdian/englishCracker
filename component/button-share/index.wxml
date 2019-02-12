@@ -1,0 +1,4 @@
+<!--myComponents/button-home/index.wxml-->
+<view class="w20" style='position:fixed;bottom:40px;right:-4px;background:transparent;' bindtap="onHome">
+  <view animation="{{animationData}}" class="icon-image-small4" style='width:40px;height:40px;border:1px solid ghostwhite;box-shadow:0px 0px 10px grey;opacity:0.7;background:white;color:#ff6600;text-align:center;line-height:40px;font-size:14px'> 分享 </view>
+</view>

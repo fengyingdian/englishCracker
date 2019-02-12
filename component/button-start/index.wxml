@@ -1,0 +1,4 @@
+<!--myComponents/button-home/index.wxml-->
+<view class="w100-white" style='border:0px solid ghostwhite;border-radius:50px;height:100px;width:100px; background:rgb(34,177,76);' bindtap='onTap'>
+  <text style="padding-top:36px;color:white;font-size:16px;font-weight:700;"> {{title}} </text>
+</view>

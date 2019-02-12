@@ -1,0 +1,19 @@
+<!--myComponents/tab-top/index.wxml-->
+<view class='itemTop' style='border-top: 1px solid ghostwhite;width:{{width}}px;height:50px'>
+  <view class="w50" wx:for="{{topTitles}}" style='height:50px'>
+    <view class='w100-white' wx:if="{{index == titleSelected}}" id="{{index}}" style=''>
+      <view style='height:13px'/>
+      <text class='textMid20' style='inline-height:50px;color:#333'> {{item.name}} </text>
+    </view>
+    <view class='w100-white' wx:else bindtap='onTap' id="{{index}}" style='inline-height:50px;height:50px;'>
+      <view style='height:13px'/>
+      <text class='textMid20' style='inline-height:50px;color:grey'> {{item.name}} </text>
+    </view>
+  </view>
+</view>
+<view style='width:{{width}}px;height:0px;display:flex;flex-direction:row;align-items:center;position:relative;top:-2px'>
+  <view class="w50" wx:for="{{topTitles}}" style=''>
+    <view class='w100-white' wx:if="{{index == titleSelected}}" id="{{index}}"style='border-top:3px solid #ff6600;width:60%'/>
+    <view class='w100-white' wx:else bindtap='onTap' id="{{index}}"/>
+  </view>
+</view>

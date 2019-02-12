@@ -1,0 +1,12 @@
+<!--myComponents/button-home/index.wxml-->
+<view wx:if="{{progress!=1}}">
+  <view class="w100-white" style='border:1px solid rgb(34,177,76); border-radius:50px;height:5px; width:300px; background:white;' bindtap='onTap'>
+  </view>
+  <view class="w100-white" style='border-radius:50px;height:5px; width:{{progress*300}}px; background:rgb(34,177,76); position:relative;top:-6px' bindtap='onTap'>
+  </view>
+</view>
+<view wx:else>
+  <view class="w100-white" style='border:1px solid rgb(34,177,76); border-radius:50px;height:5px; width:300px; background:rgb(34,177,76);'>
+  </view>
+</view>
+<text style='font-size:12px;color:grey'> {{progressShow}}% </text>

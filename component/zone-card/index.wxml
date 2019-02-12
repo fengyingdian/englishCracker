@@ -1,0 +1,14 @@
+<!--myComponents/tab-top/index.wxml-->
+<view class='wc100' style='width:{{width}}px'>
+  <view class="w100-white" wx:for="{{cards}}" style='width:{{100/cards.length}}%'>
+    <view class='w100-white' id="{{index}}" style='inline-height:80px;height:80px;'>
+      <view style='height:13px;'></view>
+      <text style='color:#333;font-size:16px'> {{item.title}} </text>
+      <view style='display:inline-block;text-align:center'>
+        <text style='color:#ff6600;font-size:22px;font-weight:900'> {{item.count}} </text>
+        <text style='color:#ff6600;padding-left:1px;font-size:12px'> {{item.unit}} </text>
+      </view>
+      <view style='height:5px;'></view>
+    </view>
+  </view>
+</view>

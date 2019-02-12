@@ -1,0 +1,6 @@
+<!--myComponents/button-home/index.wxml-->
+<view class="w30" style='position:fixed;top:70px;right:-20px;background:transparent;' bindtap="onHome">
+  <view animation="{{animationData}}" style='background:white;padding:6px 20px 6px 14px;color:white;border-top-left-radius:20px;border-bottom-left-radius:20px;font-size:14px;opacity:0.9;color:#ff6600;border:1px solid ghostwhite;box-shadow:0px 0px 10px grey;'> 
+    <text style='font-size:14px;'> 咨询答疑 </text> 
+  </view>
+</view>

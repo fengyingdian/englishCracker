@@ -1,0 +1,10 @@
+<!--myComponents/courseInfo/index.wxml-->
+<view style='height:10px'/>
+<view class='w100-white' style='height:40px;background:#ff6600;border-top-left-radius:5px;border-top-right-radius:5px;'>
+  <text class="textMid20" style='font-size:16px;font-weight:900;padding-top:6px;color:white'> {{name}} </text>
+</view>
+<view class="w100-white" id="{{index}}" style='border-bottom-left-radius:5px;border-bottom-right-radius:5px;box-shadow:0px 0px 10px gainsboro;'>
+  <view class="w90" style=''>
+    <text style='padding-top:14px;padding-bottom:14px;font-size:16px;font-weight:900'> {{info}} </text>
+  </view>
+</view>
