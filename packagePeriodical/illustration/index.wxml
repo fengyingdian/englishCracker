@@ -1,0 +1,12 @@
+<!--packageExam/illustration/index.wxml-->
+<view class='w100-white'>
+  <view class='w100-white'>
+    <view class='wl100' style='padding:0px 20px 20px 20px;width:90%'>
+      <wxparser rich-text="{{ article.teaching }}" />
+    </view>
+  </view>
+  <view style='height:50px'/>
+  <view class='w100-white' style='position:fixed;bottom:0px;background:#333;color:white;width:100%;height:50px;' bindtap='tapReturn'> 
+    <text style='font-size:16px;padding-top:8px'> 返回今日课程首页 </text>
+  </view>
+</view>

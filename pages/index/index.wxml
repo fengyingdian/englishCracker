@@ -1,0 +1,5 @@
+<!--pages/index/index.wxml-->
+<view class='w100-white' style='height:100vh'>
+  <image src="{{helloImage.src}}" style='width:100%;height:{{helloImage.h2}}px'/>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" style='position:fixed;bottom:40px;width:60%;height:40px;border-radius:50px;background:#ff6600;color:white;font-size:14px;'>立即进入</button>
+</view>

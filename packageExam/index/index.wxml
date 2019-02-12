@@ -1,0 +1,54 @@
+<!--packageExam/index/index.wxml-->
+<view class='w100-white' wx:if='{{showState == 0}}'>
+  <view style='height:50px'/>
+  <view class='w100-white' wx:if='{{titleSelected == 0}}'>
+    <view class='wl100' style='padding:20px 20px 20px 20px;width:90%'>
+      <wxparser rich-text="{{ article.content }}" />
+    </view>
+  </view>
+  <block wx:else>
+    <view style='height:20px'/> 
+    <view wx:for="{{questions}}" style="display:flex;flex-direction:column;align-items:left;width:90%;"> 
+      <view class='wl100' style='border-top-left-radius:5px;border-top-right-radius:5px;background:#ff6600;align-items:left;'>
+        <text class='multiText' style='font-size:16px;line-height:28px;color:white;padding:20px 0 20px 16px;width:90%;'>{{item.body}}</text>
+      </view>
+      <view class='wl100' style='border:1px solid ghostwhite;background:{{item.a_bk}};align-items:left;' bindtap='tapSelect' id='{{index}}' data-select='A'> 
+        <text class='multiText' style='font-size:16px;line-height:28px;color:#333;padding:14px 0 14px 16px;width:90%;'>{{item.a}}</text>
+      </view> 
+      <view class='wl100' style='border:1px solid ghostwhite;background:{{item.b_bk}};align-items:left;' bindtap='tapSelect' id='{{index}}' data-select='B'> 
+        <text class='multiText' style='font-size:16px;line-height:28px;color:#333;padding:14px 0 14px 16px;width:90%;'>{{item.b}}</text>
+      </view>
+      <view class='wl100' style='border:1px solid ghostwhite;background:{{item.c_bk}};align-items:left;' bindtap='tapSelect' id='{{index}}' data-select='C'> 
+        <text class='multiText' style='font-size:16px;line-height:28px;color:#333;padding:14px 0 14px 16px;width:90%;'>{{item.c}}</text>
+      </view>
+      <view class='wl100' style='border:1px solid ghostwhite;background:{{item.d_bk}};align-items:left;' bindtap='tapSelect' id='{{index}}' data-select='D'> 
+        <text class='multiText' style='font-size:16px;line-height:28px;color:#333;padding:14px 0 14px 16px;width:90%;'>{{item.d}}</text>
+      </view>   
+      <view style='height:20px'/> 
+    </view>
+  </block>
+  <view style='height:70px'/>
+  <view style='position:fixed;top:0px;'>
+    <tab-top2 titleSelected="{{titleSelected}}" width="{{screenWidth}}" bindtap="tapTopTitle"/>
+  </view>
+  <view class='time'>
+    <view class='time-view'> {{timeCount2 > 9 ? timeCount2 : '0' + timeCount2 }}:{{timeCount1 > 9 ? timeCount1 : '0' + timeCount1}} </view>
+  </view>
+  <view class='w100-white' style='position:fixed;bottom:0px;background:#333;color:white;width:100%;height:50px;' bindtap='tapSubmit'> 
+    <text style='font-size:16px;padding-top:8px'> 提交 </text>
+  </view>
+</view>
+<view class='w100-white' wx:elif='{{showState == 1}}'>
+  <view class="w100" style='display:inline-block;text-align:right;background:transparent;padding-top:10px' bindtap='tapIllustration'>
+    <text style='padding:6px 10px 6px 14px;color:#333;font-size:14px;'>真题讲解 ></text>
+  </view>
+  <view class='w100-white'>
+    <view class='wl100' style='padding:0px 20px 20px 20px;width:90%'>
+      <wxparser rich-text="{{ article.content }}" />
+    </view>
+  </view>
+  <view style='height:70px'/>
+  <view class='w100-white' style='position:fixed;bottom:0px;background:#333;color:white;width:100%;height:50px;' bindtap='tapAgain'> 
+    <text style='font-size:16px;padding-top:8px'> 再次挑战 </text>
+  </view>
+</view>

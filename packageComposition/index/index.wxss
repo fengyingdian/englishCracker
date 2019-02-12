@@ -1,0 +1,34 @@
+/* packageExam/index/index.wxss */
+@import "/lib/weui.wxss";
+@import "/lib/myui.wxss";
+@import "/lib/audio.wxss";
+@import "/lib/text.wxss";
+
+.time{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: rgba(255, 102, 0, .3);
+  position: fixed;
+  bottom: 180rpx;
+  right: 10rpx;
+}
+
+.time-view{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #f7c000;
+  position: relative;
+  left: 10rpx;
+  top: 10rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #FFFFFF;
+  font-size:14px;
+}
+
+button::after{
+  border: none;
+  border-radius: 0
+}

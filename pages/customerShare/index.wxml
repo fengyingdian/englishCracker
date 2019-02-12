@@ -1,0 +1,40 @@
+<!--packageA/wxGroupInfo/index.wxml-->
+<view class='w100-white'>
+  <view style='height:40px'/>
+  <view class="w100-white" bindtap="tapPreviewImage">
+    <canvas canvas-id="myCanvas" style="box-shadow:0px 0px 10px ghostwhite;width:{{0.6*width}}px; height:{{imageBK.h2}}px;border-radius:5px">
+    </canvas>
+  </view>
+  <view style='height:30px'/>
+  <view class='wc100' style='width:90%;' wx:if='{{sharedUsers.length>0}}'>
+    <text style='font-size:14px;padding:10px 10px 14px 0px'> 已邀请好友 </text>
+  </view>
+  <view wx:for='{{sharedUsers}}' class='w100-white'>
+    <view class='itemRow4' style='width:90%;box-shadow:0 0 5px #808080;border-radius:5px'>
+      <view class="w20">
+        <image class="icon-image-usr" src="{{item.header_img}}"></image>
+      </view>
+      <view class="wl60">
+        <view class="text18" style='color:#333'> {{item.nick_name}}</view>
+        <view class="textGrey18"> {{item.formatTime}} </view>
+      </view>
+      <view class="w20">
+        <view class="text18" wx:if='{{item.state==1}}' style='color:#ff6600'> 已报名 </view>
+        <view class="text18" wx:else style='color:gray'> 未报名 </view>
+      </view>
+    </view>
+    <view style='height:14px'/>
+  </view>
+  <view style='height:80px'/>
+  <view class="w100-white" style='position:fixed;bottom:0px;border:1px solid #ff6600;background:white;'>
+    <view class="wc100" style='height:50px'>
+      <button class="w50" style='border:0px solid ghostwhite;height:50px;border-radius:0px;background:white;' bindtap='tapSave' data-src="{{imageBK.src}}" >
+        <text style="padding-top:6px;font-size:14px;font-weight:900;color:#ff6600"> 保存至相册 </text>
+      </button>
+      <button class="w50" style='background:#ff6600;height:50px;border-radius:0px;' open-type="share">
+        <text style="padding-top:6px;font-size:14px;font-weight:900;color:white;"> 转发给朋友 </text>
+      </button>
+    </view>
+  </view>
+</view>
+

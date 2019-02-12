@@ -1,0 +1,11 @@
+<!--packageExam/index/index.wxml-->
+<view class='w100-white'>
+  <view class="w100" style='display:inline-block;text-align:right;background:transparent;padding-top:10px' bindtap='tapIllustration'>
+    <text style='padding:6px 10px 6px 14px;color:#333;font-size:14px;'>外刊讲义 ></text>
+  </view>
+  <view class='w100-white'>
+    <view class='wl100' style='padding:0px 20px 20px 20px;width:90%'>
+      <wxparser rich-text="{{ article.content }}" />
+    </view>
+  </view>
+</view>

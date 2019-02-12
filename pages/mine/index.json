@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "秒杀英语",
+  "usingComponents": {
+    "zone-card2": "/component/zone-card2/index"
+  }
+}

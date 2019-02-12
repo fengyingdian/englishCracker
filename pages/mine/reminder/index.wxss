@@ -1,0 +1,47 @@
+/* pages/mine/reminder/index.wxss */
+@import "/lib/weui.wxss";
+@import "/lib/myui.wxss";
+@import "/lib/audio.wxss";
+@import "/lib/text.wxss";
+
+button::after{
+  border: none;
+}
+
+.title {
+  font-size: 26rpx;
+  color: #333;
+  text-align: center;
+  height: 65rpx;
+  line-height: 65rpx;
+  background: white;
+  margin-top: 5rpx;
+}
+
+.box {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+picker-view-column {
+  text-align: center;
+}
+
+.tits {
+  text-align: center;
+  margin: 10rpx 0;
+}
+
+.stop {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}

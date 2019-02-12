@@ -1,0 +1,19 @@
+<!--packageA/wxGroupInfo/index.wxml-->
+<view class='w100-white'>
+  <view class="h20"/>
+  <view class='w100-white' style='border-radius:5px;box-shadow:0px 0px 10px gainsboro;width:90%;padding-top:20px;padding-bottom:20px;'>
+    <image src="{{imageORCode.src}}" data-src="{{imageORCode.src}}" style='height:{{imageORCode.h2}}px;width:100%' bindtap='tapPreviewImage'/>
+  </view>
+  <view style='height:50px'></view>
+</view>
+<view  style='height:30px'/>
+<view class="w100-white" style='position:fixed;bottom:0px;border:1px solid #ff6600;background:white;'>
+  <view class="wc100" style='height:50px'>
+    <button class="w50" style='border:0px solid ghostwhite;height:50px;border-radius:0px;background:white;' bindtap='tapSaveImage' data-src="{{imageORCode.src}}" >
+      <text style="padding-top:6px;font-size:14px;font-weight:900;color:#ff6600"> 保存老师微信二维码</text>
+    </button>
+    <button class="w50" style='background:#ff6600;height:50px;border-radius:0px;' open-type="share">
+      <text style="padding-top:6px;font-size:14px;font-weight:900;color:white;"> 转发给朋友 </text>
+    </button>
+  </view>
+</view>

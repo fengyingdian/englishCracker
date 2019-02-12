@@ -1,0 +1,80 @@
+<!--pages/myCourse/index.wxml-->
+<block wx:if='{{state == 0}}'>
+  <view class='w100-white' style='background-image:url(https://mmbiz.qpic.cn/mmbiz_png/90b2a0yoOanaKIhOnK3gEjX6VaQnuicicibFHbibebONejIWX2hLqE0BxbXoJZiaYELftmerbScDYLicbM8OG24fNJzg/0?wx_fmt=png);height:700px' >
+    <view style='height:20px'/>
+    <view class='w100-white' style='height:120px;width:80%;border-radius:5px;box-shadow:0 0 10px grey'>
+      <view style='height:20px'/>
+      <text style='font-size:16px;font-weight:900;color:#333;'>距离开课还有</text>
+      <view style='height:10px'/>
+      <image style='width:80px;height:80px' src='/pages/image/canlender.png'/>
+      <view class='w10'> 
+        <view class='wc100' style='position:relative;top:-32px'>
+          <text style='font-size:20px;color:white;font-weight:900;'> {{days}} </text>
+          <text style='font-size:12px;color:white;font-weight:900;padding-top:2px;padding-left:8px'> 天</text>
+        </view>
+      </view>
+    </view>
+    <view style='height:10px'/>
+    <view class='w100-white' style='width:80%;border-radius:5px;box-shadow:0 0 10px grey'>
+      <view style='height:20px'/>
+      <text style='font-size:16px;font-weight:900;color:#333;'>学前准备流程</text>
+      <view style='height:14px'/>
+      <text style="font-size:14px;padding-top:2px;"> 添加老师微信，报道入学，领取资料 </text>
+      <text style='font-size:14px;padding-bottom:10px'> 老师微信号： {{wechat}} </text>
+      <image style='width:80px;height:80px' src="{{qrcode}}" bindtap='tapPreviewImage' data-src="{{qrcode}}"/>
+      <text style="font-size:12px;padding-top:2px;color:grey"> (单击后长按保存老师二维码) </text>
+      <view style='height:10px'/>
+      <text style="font-size:14px;padding-top:2px;padding-bottom:10px"> 学习打卡，赢取奖学金 </text>
+      <view style='width:40%;height:30px;border-radius:50px;background:#ff6600;color:white;font-size:14px;box-shadow:0 0 5px grey;text-align:center;line-height:30px;' bindtap='tapPunchCard'>学习打卡</view>
+      <view style='height:10px'/>
+      <text style="font-size:14px;padding-top:2px;padding-bottom:10px"> 召唤好友，退免学费 </text>
+      <view style='height:30px'/>
+    </view>
+    <image style='width:50px;height:50px;border-radius:40px;background:#ff6600;color:white;font-size:14px;position:relative;top:-24px;box-shadow:0 0 5px grey' src='/pages/image/invite.png' bindtap='tapShare'> </image>
+    <view style='height:10px'/>
+  </view>
+</block>
+<block wx:else>
+  <image src="{{headImage.src}}" mode='aspectFit' style='border-radius:3px;border-radius:3px;width:100%'/>
+  <view class='w100-white'>
+    <text style='font-size:16px;color:#333'> </text>
+    <block wx:for="{{goods}}" wx:for-key='index1' wx:for-item='good'>
+      <view wx:if='{{good.is_show}}' class="w100-white" style='display:inline-block;text-align:right;padding-right:0px;width:80%' bindtap='{{good.tapShare}}'>
+        <text style='border-radius:20px;border:1px solid #ff6600;color:#ff6600;height:40px;font-size:14px;font-size:400;padding:4px 20px 4px 20px'>分享</text>
+      </view>
+      <block wx:for="{{good.courses}}" wx:for-key='index2' wx:for-item='item'> 
+        <block wx:if='{{item.is_show}}'>
+          <text class='wl70' style='width:90%;font-size:20px;'>{{item.courseName}}</text>
+          <view style='height:40px'/>
+          <view class="itemCourse" style='height:140px;border-radius:5px;box-shadow:0 0 10px #e0e0e0;width:80%' bindtap='{{item.tap}}' data-type='{{item.courseType}}' data-article_id='{{item.article_id}}' data-chapters_id='{{item.chapters_id}}'>
+            <view class="wColumn" style='padding-left:20px;position:relative;top:-20px'>
+              <image style='width:100px;height:130px;border-radius:5px;align-content:left;border:2px solid white' src="{{item.cover}}"/>
+              <view class='h20'/>
+            </view>
+            <view class="wl70" style='padding-left:20px;'>
+              <text style='font-size:18px;font-weight:900;color:#333'> Day {{item.dayNumber}} </text>
+              <text style='font-size:16px;color:#333'> {{item.title}} </text>
+              <view class='wc100' style='padding-top:4px'>
+                <block wx:if='{{item.log.is_finish}}'>
+                  <image style='width:12px;height:12px' src='/pages/image/right1.png' />
+                  <text style='font-size:12px;color:grey;padding-left:4px'> 已完成 </text>
+                  <!--text style='font-size:12px;color:grey;padding-left:10px'> 阅读时间: {{item.log.finish_time}}s </text-->
+                </block>
+                <block wx:else>
+                  <image style='width:12px;height:12px' src='/pages/image/right2.png' />
+                  <text style='font-size:12px;color:grey;padding-left:4px'> 未完成 </text>
+                </block>
+              </view>
+            </view>
+          </view>
+          <block wx:if="{{index < good.courses.length-1}}">
+            <view style='height:20px;width:100%;'/>
+            <!--view style='height:10px;width:100%;background:ghostwhite'/-->
+            <view style='height:10px;width:100%;'/>
+          </block>
+        </block>
+      </block>
+    </block>
+  </view>
+  <view style='height:50px'> </view>
+</block>

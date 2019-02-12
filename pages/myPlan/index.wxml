@@ -1,0 +1,9 @@
+<!--pages/myPlan/index.wxml-->
+<view class='w100-white'>
+  <image src="{{headImage.src}}" style='border-radius:3px;height:{{headImage.h2}}px;width:100%'/>
+  <view style='height:14px'> </view>
+  <view class='w100-white'>
+    <calendar calendar-style="calendar" header-style="header" board-style="board" style="width:{{0.94*width}}px;" binddayClick="dayClick" bindnextMonth="next" bindprevMonth="prev" binddateChange="dateChange" days-color="{{courseData}}" cell-size="30" active-type="rounded"/>
+  </view>
+</view>
+

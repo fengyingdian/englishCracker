@@ -1,0 +1,42 @@
+<!--packageExam/illustration/index.wxml-->
+<view class='w100-white'>
+  <view class="w100" style='display:inline-block;text-align:right;background:transparent;padding-top:10px' bindtap='tapHistory'>
+    <text style='padding:6px 10px 6px 14px;color:#333;font-size:14px;'>历史记录 ></text>
+  </view>
+  <text style='font-size:16px;color:#333;font-weight:900'> 阅读数据统计 </text>
+  <view class='wc100' style='background:transparent;height:40px;'>
+    <view class="w50" style='font-size:12px;display:inline-block;text-align:left;padding-left:40px;'>
+      <text> 本次真题字数 </text>
+      <text> {{words}} words </text>
+    </view>
+    <view class="w50" style='font-size:12px;display:inline-block;text-align:right;padding-right:40px'>  
+      <text> 本次完成时间 </text>
+      <text> {{timeCount2 > 9 ? timeCount2 : '0' + timeCount2 }}:{{timeCount1 > 9 ? timeCount1 : '0' + timeCount1}} </text>
+    </view>
+  </view>
+  <view style='height:10px' />
+  <view class="w100-white" style='box-shadow:0 5px 10px #e0e0e0;border-radius:5px;width:90%;'>
+    <view class="w100-white" style='display:inline-block;text-align:right;background:transparent;'>
+      <text style='padding:20px 20px 6px 20px;color:#333;font-size:14px;'>正确率：{{ratio}}%</text>
+      <view style='height:10px'/>
+    </view>
+    <view class='wc100'>
+      <view class='w50' wx:for='{{answer}}' style='width:{{100/answer.length}}%'>
+        <text style='font-size:14px;color:grey;font-weight:900'> {{index+1}} </text>
+        <view style='height:10px'/>
+        <image style='width:14px;height:14px;' src="{{item.right?'/pages/image/right.png':'/pages/image/wrong.png'}}"/>
+        <view style='height:20px'/>
+      </view>
+    </view>
+  </view>
+  <view style='height:20px'/>
+  <view class='w100-white'>
+    <view class='wl100' style='padding:0px 20px 20px 20px;width:90%'>
+      <wxparser rich-text="{{ article.teaching }}" />
+    </view>
+  </view>
+  <view style='height:50px'/>
+  <view class='w100-white' style='position:fixed;bottom:0px;background:#333;color:white;width:100%;height:50px;' bindtap='tapReturn'> 
+    <text style='font-size:16px;padding-top:8px'> 返回今日课程首页 </text>
+  </view>
+</view>

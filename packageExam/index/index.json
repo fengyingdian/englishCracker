@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tab-top2": "/component/tab-top2/index",
+    "wxparser": "plugin://wxparserPlugin/wxparser"
+  }
+}

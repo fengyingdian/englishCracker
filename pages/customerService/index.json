@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "答疑老师",
+  "usingComponents": {
+    "button-saveImage": "/component/button-saveImage/index"
+  }
+}

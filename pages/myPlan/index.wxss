@@ -1,0 +1,23 @@
+/* pages/myPlan/index.wxss */
+@import "/lib/weui.wxss";
+@import "/lib/myui.wxss";
+@import "/lib/audio.wxss";
+@import "/lib/text.wxss";
+
+button::after{
+  border: none;
+}
+
+.calendar {
+  padding-top: 10px;
+  background-color:white; /*背景色为白色*/
+  border-radius: 15px;   /*添加边框圆角*/
+}
+
+.header {
+  font-size: large; /*修改了标题文字和按钮的大小*/
+}
+
+.board {
+  background-color: white;
+}

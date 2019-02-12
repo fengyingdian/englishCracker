@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "tab-top": "/component/tab-top/index",
+    "courseInfo": "/component/courseInfo/index",
+    "courseEnroll": "/component/courseEnroll/index",
+    "zone-left1": "/component/zone-left1/index",
+    "zone-right1": "/component/zone-right1/index",
+    "zone-content": "/component/zone-content/index",
+    "zone-tip": "/component/zone-tip/index",
+    "button-service": "/component/button-service/index",
+    "button-share": "/component/button-share/index"
+  }
+}

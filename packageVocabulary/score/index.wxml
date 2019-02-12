@@ -1,0 +1,9 @@
+<!--pages/score/index.wxml-->
+<view class='w100' style='height:100vh'>
+  <view style='height:100px'> </view>
+  <text style='height:40px;font-size:14px;color:grey'> 恭喜您完成测试</text>
+  <text style='height:40px;font-size:14px;color:grey'> 您的单词量为</text>
+  <text style='height:100px; font-size:50px;font-weight:900;color:rgb(34,177,76)'> {{score}}</text>
+  <view style='height:40px'> </view>
+  <button-start bindtap="tapRerurn" title="返回" animation="{{animation}}"/>
+</view>

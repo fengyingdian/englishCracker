@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "button-start": "/component/button-start/index"
+  }
+}

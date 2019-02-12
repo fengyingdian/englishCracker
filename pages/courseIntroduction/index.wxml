@@ -1,0 +1,85 @@
+<!--pages/logs/courseIntroduction/index.wxml-->
+<view wx:if="{{showPage}}" class='w100-ghostwhite'>
+  <block wx:if="{{titleSelected==0}}"> 
+  <view style='padding-top:51px'/>
+    <view class='w100-white'> 
+      <image src="{{imageHead.src}}" style='border-radius:3px;height:{{imageHead.h2}}px;border-radius:3px;align-content:center;width:100%'/>
+      <view style='height:10px'/>
+      <view wx:for="{{courses}}" style="width:90%"> 
+        <view style='height:14px'/>
+        <view class='w100-white' style='border:1px solid #f0f0f0;border-radius:5px;box-shadow:0 0 10px #e0e0e0'>
+          <view class="wc100" bindtap="tapOneCourse" id="{{item.category_value-1}}" style='height:100px;border-top-left-radius:5px;border-top-right-radius:5px;'>
+            <view class="w20">
+              <image src="{{item.icon}}" style='border-radius:3px;width:20px;height:20px;border-radius:3px;align-content:left;'/>
+            </view>
+            <view class="wl50">
+              <text class="textMid20" style='font-size:16px;font-weight:900'> {{item.name}} </text>
+              <text class="textGreyFont12" style='padding-top:6px'> {{item.content}} </text>
+              <view class='wc100' style='padding-top:2px'>
+                <view class='wc100' wx:for="{{item.labels}}" wx:for-item="label" style='width:38px'> 
+                  <text style='font-size:10px;color:white;background:#f7d700;border-top-left-radius:15px;border-top-right-radius:10px;border-bottom-left-radius:15px;padding-right:6px;padding-left:8px;padding-top:0px;padding-bottom:1px;'> {{label}} </text>
+                </view>
+              </view>
+            </view>
+            <view class="w30">
+              <text wx:if='{{!isIOS}}' style='font-size:14px;font-size:900;padding-bottom:4px'>{{item.price}}元/{{item.days}}天</text>
+              <text class="textGreyFont14" style='background:#ff6600;color:white;border-radius:20px;padding:2px 10px 2px 10px;'> 点我报名 </text>
+            </view>
+          </view>
+          <view class='wc100' style='background:#f8f8f8;border-bottom-left-radius:5px;border-bottom-right-radius:5px;height:40px;'>
+            <text class="w40" style='font-size:12px;padding-left:10px;color:grey'>已有{{item.number}}人报名 </text>
+            <text wx:if='{{!isIOS}}' class="w60" style='font-size:12px;font-size:400;display:inline-block;text-align:right;padding-right:20px'>每天只要{{item.price/item.days}}元</text>
+          </view>
+        </view>
+      </view>
+      <view style='height:20px'/>
+      <image src="{{imageFlow.src}}" style='border-radius:3px;height:{{imageFlow.h2}}px;border-radius:3px;align-content:center;width:100%'/>
+    </view>
+    <view class="w30" style='position:fixed;top:70px;right:-20px;background:transparent;' bindtap="tapService">
+      <view animation="{{animationData}}" style='background:white;padding:6px 20px 6px 14px;color:white;border-top-left-radius:20px;border-bottom-left-radius:20px;font-size:14px;opacity:0.9;color:#ff6600;border:1px solid ghostwhite;box-shadow:0px 0px 10px grey;'> 
+        <text style='font-size:14px;'> 咨询答疑 </text> 
+      </view>
+    </view>
+    <view class="w20" style='position:fixed;bottom:40px;right:-4px;background:transparent;' bindtap="tapShare">
+      <view animation="{{animationData}}" class="icon-image-small4" style='width:40px;height:40px;border:1px solid ghostwhite;box-shadow:0px 0px 10px grey;opacity:0.7;background:white;color:#ff6600;text-align:center;line-height:40px;font-size:14px'> 分享 </view>
+    </view>
+    <view style='height:40px;'/>
+  </block>
+  <block wx:elif="{{titleSelected==1}}">
+    <view style='padding-top:51px;background:ghostwhite'/>
+    <view class='w100-ghostwhite'>
+      <courseInfo />
+      <view style='height:40px;background:ghostwhite'/>
+    </view>
+  </block>
+  <block wx:elif="{{titleSelected==2}}">
+    <view style='padding-top:51px'/>
+    <view style='height:10px'/>
+    <view class='w100-white'>
+      <view class='w90-white'>
+        <view style='height:10px'/>
+        <view class="itemRow4" id="{{index}}" style='height:100px;border-radius:5px;box-shadow:0px 0px 10px gainsboro;height:{{height}}px;width:100%'>
+          <view class="w30">
+            <image src="{{scholarship[0].icon}}" style='border-radius:3px;width:40px;height:40px;border-radius:3px;align-content:left;'/>
+          </view>
+          <view class="wl60" style='padding-left:20px'>
+            <text class="textMid20" style='font-size:16px;font-weight:900'> {{scholarship[0].name}} </text>
+            <text class="textGreyFont12" style='padding-top:6px'> {{scholarship[0].info}} </text>
+          </view>
+        </view>
+        <view style='height:14px'/>
+        <zone-right icon="{{scholarship[1].icon}}" name="{{scholarship[1].name}}" info="{{scholarship[1].info}}" height="100"/>
+        <view style='height:14px'/>
+        <zone-left icon="{{scholarship[2].icon}}" name="{{scholarship[2].name}}" info="{{scholarship[2].info}}" height="100"/>
+        <view style='height:10px'/>
+        <zone-content icon="{{scholarship[3].icon}}" name="{{scholarship[3].name}}" info="{{scholarship[3].info}}" height="110"/>
+        <view style='height:4px'/>
+        <zone-content icon="{{scholarship[4].icon}}" name="{{scholarship[4].name}}" info="{{scholarship[4].info}}" height="110"/>
+      </view>
+      <view style='height:40px;'/>
+    </view>
+  </block>
+  <view style='position:fixed;top:0px;'>
+    <tab-top titleSelected="{{titleSelected}}" width="{{screenWidth}}" bindtap="tapTopTitle"/>
+  </view>
+</view>

@@ -1,0 +1,144 @@
+/* pages/index/coursePayment/index.wxss */
+@import "/lib/weui.wxss";
+@import "/lib/myui.wxss";
+@import "/lib/audio.wxss";
+@import "/lib/text.wxss";
+
+page{
+  margin: 0;padding: 0;
+}
+
+.img{
+  width: 100%;
+  height: 500rpx;
+  position: relative
+}
+
+.img image{
+  width: 100%;
+  height: 100%;
+}
+
+.wen{
+  color: white;
+  position: absolute;
+  left: 260rpx;
+  top: 60rpx;
+  font-size: 32rpx;
+}
+
+.jiaru{
+  color: white;
+  font-size: 26rpx;
+  position: absolute;
+  right: 65rpx;
+  top: 178rpx;
+}
+
+.bao{
+  width: 80%;
+  position: absolute;
+  top: 250rpx;
+  left: 80rpx;
+  color: white;
+}
+
+.zuoyou{
+  display: flex;
+  font-size: 30rpx;
+  justify-content: space-around;
+  margin-top: 30rpx;
+}
+
+.zuo{
+  display: flex;
+  flex-direction: column
+}
+
+.you{
+  display: flex;
+  flex-direction: column;
+}
+
+.daka{
+  font-size:26px;
+  font-weight:bolder;
+  text-align: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1px white dashed;
+}
+
+.foot{
+  position: fixed;
+  bottom: 0;
+  left: o;
+  width: 100%;
+  height: 90rpx;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+.foot view:nth-of-type(1){
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.foot view:nth-of-type(1) text:nth-of-type(1){
+  font-size: 28rpx;
+  margin-left: 30rpx;
+}
+
+.foot view:nth-of-type(1) text:nth-of-type(2){
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}
+
+.foot view:nth-of-type(2){
+  width: 40%;
+  background: #ff7200;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.booter{
+  width: 90%;
+  margin: 0 auto;
+  height: 170rpx;
+  display: flex;
+  border: 1px solid #eeeeee;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+
+.booter view{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95rpx;
+}
+
+.booter image{
+  width: 77rpx;
+  height: 77rpx;
+}
+
+.booter .text{
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.booter .xiao{
+  font-size: 26rpx;
+}
+
+.booter .da{
+  font-size: 30rpx;
+}

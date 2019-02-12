@@ -1,0 +1,6 @@
+<!--pages/punchMethod/index.wxml-->
+<view class='w100-white'>
+  <image src="{{image.src}}" data-src="{{image.src}}" style='height:{{image.h2}}px;width:100%' bindtap='tapPreviewImage'/>
+</view>
+<view tyle='height:10px'/>
+

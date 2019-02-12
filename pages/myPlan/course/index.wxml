@@ -1,0 +1,41 @@
+<!--pages/myPlan/course/index.wxml-->
+<view class='w100-white'>
+  <text style='font-size:16px;color:#333'> </text>
+  <block wx:for="{{goods}}" wx:for-key='index1' wx:for-item='good'>
+    <view style='height:20px'/>
+    <view wx:if='{{good.is_show}}' class="w100-white" style='display:inline-block;text-align:right;padding-right:0px;width:80%' bindtap='{{good.tapShare}}'>
+      <text style='border-radius:20px;border:1px solid #ff6600;color:#ff6600;height:40px;font-size:14px;font-size:400;padding:4px 20px 4px 20px;'>分享</text>
+    </view>
+    <block wx:for="{{good.courses}}" wx:for-key='index2' wx:for-item='item'> 
+      <block wx:if='{{item.is_show}}'>
+        <text class='wl70' style='width:90%;font-size:20px;'>{{item.courseName}}</text>
+        <view style='height:40px'/>
+        <view class="itemCourse" style='height:140px;border-radius:5px;box-shadow:0 0 10px #e0e0e0;width:80%' bindtap='{{item.tap}}' data-type='{{item.courseType}}' data-article_id='{{item.article_id}}' data-chapters_id='{{item.chapters_id}}'>
+          <view class="wColumn" style='padding-left:20px;position:relative;top:-20px'>
+            <image style='width:100px;height:130px;border-radius:5px;align-content:left;border:2px solid white' src="{{item.cover}}"/>
+            <view class='h20'/>
+          </view>
+          <view class="wl70" style='padding-left:20px;'>
+            <text style='font-size:18px;font-weight:900;color:#333'> Day {{item.dayNumber}} </text>
+            <text style='font-size:16px;color:#333'> {{item.title}} </text>
+            <view class='wc100' style='padding-top:4px'>
+              <block wx:if='{{item.log.is_finish}}'>
+                <image style='width:12px;height:12px' src='/pages/image/right1.png' />
+                <text style='font-size:12px;color:grey;padding-left:4px'> 已完成 </text>
+                <!--text style='font-size:12px;color:grey;padding-left:10px'> 阅读时间: {{item.log.finish_time}}s </text-->
+              </block>
+              <block wx:else>
+                <image style='width:12px;height:12px' src='/pages/image/right2.png' />
+                <text style='font-size:12px;color:grey;padding-left:4px'> 未完成 </text>
+              </block>
+            </view>
+          </view>
+        </view>
+        <block wx:if="{{index < good.courses.length-1}}">
+          <view style='height:20px;width:100%;'/>
+          <view style='height:10px;width:100%;'/>
+        </block>
+      </block>
+    </block>
+  </block>
+</view>

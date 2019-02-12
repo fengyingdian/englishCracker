@@ -1,0 +1,27 @@
+<!--pages/index/coursePayment/index.wxml-->
+<view class='w100-white'>
+  <image src="{{courseInfo[category_value].src}}" style='height:{{courseInfo[category_value].h2}}px;align-content:left;width:100%;'/>
+  <view class="wc100" style='position:absolute;top:10px'>
+    <image style='width:14px;height:14px;padding-left:22px' src='/pages/image/horn.png'></image>
+    <text style='font-size:12px;color:ghostwhite;padding-left:4px'>目前</text>
+    <text style='font-size:12px;color:white;font-weight:900'>{{number}}人</text>
+    <text style='font-size:12px;color:ghostwhite'>参加，快快加入吧！</text>
+  </view>
+  <view class="w100" style='position:absolute;top:20px;right:0px;display:inline-block;text-align:right;background:transparent' bindtap='tapCheckCourses'>
+    <text style='background:#ff6600;padding:6px 10px 6px 14px;color:white;border-top-left-radius:20px;border-bottom-left-radius:20px;font-size:14px;'>查看所有课程</text>
+  </view>
+  <view style='height:64px'> </view>
+  <view class="w20" style='position:fixed;bottom:70px;right:-4px;background:transparent;' bindtap="tapShare">
+    <view animation="{{animationData}}" class="icon-image-small4" style='width:40px;height:40px;border:1px solid ghostwhite;box-shadow:0px 0px 10px grey;opacity:0.7;background:white;color:#ff6600;text-align:center;line-height:40px;font-size:14px'> 分享 </view>
+  </view>
+</view>
+
+<view class="wc100" wx:if='{{!isIOS}}' style='background:black;color:white;position:fixed;bottom:0px;height:50px'>
+  <view class='wl60' style=''>
+    <text style='padding-left:20px;font-size:16px'>限时抢购 ￥{{ returnDatas.price }}元/100天</text>
+    <text style='padding-left:20px;font-size:12px;text-decoration:line-through;'>原价 ￥{{ returnDatas.old_price }}元/100天</text>
+  </view>
+  <view class='w40' style='height:54px;background:#ff6600;' bindtap='onPay'>
+    <text style='font-size:16px;padding-top:14px'>立即支付</text>
+  </view>
+</view>

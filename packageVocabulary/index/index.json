@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "button-chinese": "/component/button-chinese/index",
+    "button-next": "/component/button-next/index",
+    "button-progress": "/component/button-progress/index"
+  }
+}

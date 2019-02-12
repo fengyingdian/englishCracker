@@ -1,0 +1,20 @@
+<!--pages/wordPage/index.wxml-->
+<view class='w100' style='height:100vh'>
+  <view style='height:20px'> </view>
+  <button-progress progress="{{progress}}"/>
+  <view style='height:4px'> </view>
+  <text style='font-size:20px; font-weight:900; color:black; padding-top:20px; padding-bottom:4px;'animation="{{_animation[0]}}">{{curWord.english}}</text>
+  <view style='height:20px'> </view>
+  <button-chinese translate="{{curWord.translate[0]}}" animation="{{_animation[1]}}" bindtap="tapTranslate" background="{{background[0]}}" color="{{color[0]}}" id="0"/>
+  <view style='height:20px'> </view>
+  <button-chinese translate="{{curWord.translate[1]}}" animation="{{_animation[2]}}" bindtap="tapTranslate" background="{{background[1]}}" color="{{color[1]}}" id="1"/>
+  <view style='height:20px'> </view>
+  <button-chinese translate="{{curWord.translate[2]}}" animation="{{_animation[3]}}" bindtap="tapTranslate" background="{{background[2]}}" color="{{color[2]}}" id="2"/>
+  <view style='height:20px'> </view>
+  <button-chinese translate="{{curWord.translate[3]}}" animation="{{_animation[4]}}" bindtap="tapTranslate" background="{{background[3]}}" color="{{color[3]}}" id="3"/>
+  <view style='height:30px'> </view>
+  <button-next bindtap="tapTranslate" animation="{{_animation[5]}}" id="4"/>
+  <view style='position:fixed;bottom:20px;'>
+    <text style='font-size:12px;color:grey;'>{{motto}}</text>
+  </view>
+</view>
