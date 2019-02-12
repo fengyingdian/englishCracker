@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/courseIntroduction/index",
+    "pages/coursePayment/index",
+    "pages/customerService/index",
+    "pages/customerShare/index",
+    "pages/myCourse/index",
+    "pages/punchMethod/index",
+    "pages/myPlan/index",
+    "pages/mine/index",
+    "pages/myPlan/course/index",
+    "pages/mine/teacherInfo/index",
+    "pages/mine/reminder/index"
+  ],
+  "subPackages": [
+    {
+      "root": "packageExam",
+      "pages": [
+        "index/index",
+        "illustration/index",
+        "share/index"
+      ]
+    },
+    {
+      "root": "packagePeriodical",
+      "pages": [
+        "index/index",
+        "illustration/index"
+      ]
+    },
+    {
+      "root": "packageVocabulary",
+      "pages": [
+        "index/index",
+        "score/index"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "秒杀英语",
+    "navigationBarTextStyle": "black"
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.1.3",
+      "provider": "wx92c68dae5a8bb046"
+    },
+    "wxparserPlugin": {
+      "version": "0.2.1",
+      "provider": "wx9d4d4ffa781ff3ac"
+    }
+  },
+  "tabBar": {
+    "color": "#bababa",
+    "selectedColor": "#525252",
+    "list": [
+      {
+        "pagePath": "pages/myCourse/index",
+        "text": "今日课程",
+        "iconPath": "pages/image/myCourse1.png",
+        "selectedIconPath": "pages/image/myCourse2.png"
+      },
+      {
+        "pagePath": "pages/myPlan/index",
+        "text": "开课计划",
+        "iconPath": "pages/image/myPlan1.png",
+        "selectedIconPath": "pages/image/myPlan2.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的主页",
+        "iconPath": "pages/image/mine1.png",
+        "selectedIconPath": "pages/image/mine2.png"
+      }
+    ]
+  }
+}
